@@ -39,6 +39,20 @@ CUANDO NO SE HAN ENCONTRADOS MODELOS EN LA BASE DE DATOS QUE MOSTRAR.
 
 ## Despliegue
 
+UPDATE : En este servidor está desplegada la versión anterior sin Laravel.
+La versión con laravel será desplegada en otro hosting ya que aquí solo soporta hasta la versión 5 y sería de pago,
+
 Actualmente está desplegado en: ("http://shishaword.atwebpages.com/index.php") usando un dominino gratuito.
 
+
+
 La base de datos se aloja en el mismo hosting
+
+
+# Diario:
+Debido a temas de trabajo no le puedo dedicar todo el tema que me gustaría.
+## Hasta el día 13 de Mayo
+- Crear nuevo repositorio con Laravel 8.
+- Comprobar compatibilidad en el hosting con Laravel 8.
+- Crear Crud básico.
+- Actualmente para el front se usa bootstrap para realizar pruebas y demás, cuando el proyecto esté más avanzado se sustituirá el css por uno propio.
