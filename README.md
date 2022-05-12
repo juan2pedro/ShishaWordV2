@@ -1,64 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# ShishaWord, _Ante-Proyecto fin de grado 2 DAW IES Campanillas_
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Tematica
 
-## About Laravel
+La tematica del sitio es un foro sobre cachimbas y a la vez tener una gran base de datos. Pudiendo añadir así los usuarios subir los diferentes modelos,marcas,sabores, mezclas, etc, siendo siempre verificados por un admin para comprobar el contenido de la información subido
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# TOUR POR EL SITIO WEB
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- ## Login
+Podemos elegir entre iniciar sesion o registranos, para así poder verificar que el usuario es mayor de edad, el login es el mismo para los usuarios como para los administradores, solo que al iniciar sesión al administrador le aparecerán más opciones para poder moderar.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Los usuarios no registrados no podrán ver el contenido de la pagina ya que debemos comprobar que los usuarios son mayores de edad (🔞)
 
-## Learning Laravel
+![image](https://user-images.githubusercontent.com/55956200/145903131-807747a1-73c0-4aa7-84c6-a08aa52d23a9.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- ## Home
+En el home cargan automaticamente el contenido desde la BBDD y si hacemos click en el nombre del modelo podemos acceder a la pagina para editar y/o borrar su contenido,tambien cuenta con un menu desplegable a la izquierda.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![image](https://user-images.githubusercontent.com/55956200/145903242-f80e1518-c04b-4dae-b0aa-1a3aa4153179.png)
 
-## Laravel Sponsors
+- ## ACTUALIZAR
+Desde esta pagina podemos actualizar la informacion basica del modelo como nombre, año de lanzamiento , precio y descripcion o hacer el borrado del modelo si asi se desea
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![image](https://user-images.githubusercontent.com/55956200/145903466-d51efe57-92b7-4db7-b056-bbb0171b05fe.png)
 
-### Premium Partners
+- ## VENTA DE ALERTA
+CUANDO NO SE HAN ENCONTRADOS MODELOS EN LA BASE DE DATOS QUE MOSTRAR.
+![image](https://user-images.githubusercontent.com/55956200/145902407-44cfbb91-637d-4093-9ea3-3eab5d82c7e8.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+# Esquema E/R 
+![image](https://user-images.githubusercontent.com/55956200/162184427-cb48311c-234f-4c3b-a671-84a22e9e6cae.png)
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- ## Tecnología
+- [Ayax] - Front / Framerwork!
+- [jQuery] - Front / Framerwork
+- [PHP] - Backend
+- [Laravel] - Backend / Framerwork
 
-## Code of Conduct
+## Despliegue
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Actualmente está desplegado en: ("http://shishaword.atwebpages.com/index.php") usando un dominino gratuito.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+La base de datos se aloja en el mismo hosting
