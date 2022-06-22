@@ -12,7 +12,7 @@
 
 
     <!--Inter UI font-->
-    <link href="{{ asset('public/css/home.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('public/css/home.css') }}" rel="stylesheet">
 
     <!--vendors styles-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -92,11 +92,11 @@
   
   </div>
     <video width="100%" height="30%"  autoplay muted  loop>
-     <source src=" {{ asset('public/media/MR. SHISHA™️ ROCKET2.0.mp4') }}" type="video/mp4" >
+     <source src=" {{ secure_asset('public/media/MR. SHISHA™️ ROCKET2.0.mp4') }}" type="video/mp4" >
 Your browser does not support the video tag.
 </video>
 <audio controls autoplay>
-  <source src="{{ asset('public/media/Shisha ASMR.mp3') }}" type="audio/mp3">
+  <source src="{{ secure_asset('public/media/Shisha ASMR.mp3') }}" type="audio/mp3">
 Your browser does not support the audio element.
 </audio>
     <!-- features section -->
@@ -227,7 +227,7 @@ Your browser does not support the audio element.
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="{{ asset('public/js/home.js') }}"></script>
+    <script src="{{ secure_asset('public/js/home.js') }}"></script>
 </body>
 </html>
 

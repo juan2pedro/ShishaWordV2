@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'shisha-word'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/ShishaWordV2'),
+    'url' => env('APP_URL', 'https://shisha-word.herokuapp.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
