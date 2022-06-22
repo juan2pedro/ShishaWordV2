@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Disponible;
+use App\Models\Materiale;
+use App\Models\Modelo;
 use Illuminate\Http\Request;
 
 /**
@@ -19,8 +21,10 @@ class DisponibleController extends Controller
     public function index()
     {
         $disponibles = Disponible::paginate();
+        $materiales = Materiale::pluck('detalles','id');
+        $modelos = Modelo::pluck('nombre','id');
 
-        return view('disponible.index', compact('disponibles'))
+        return view('disponible.index', compact('disponibles','materiales','modelos'))
             ->with('i', (request()->input('page', 1) - 1) * $disponibles->perPage());
     }
 
@@ -32,7 +36,9 @@ class DisponibleController extends Controller
     public function create()
     {
         $disponible = new Disponible();
-        return view('disponible.create', compact('disponible'));
+        $materiales = Materiale::pluck('detalles','id');
+        $modelos = Modelo::pluck('nombre','id');
+        return view('disponible.create', compact('disponible','materiales','modelos'));
     }
 
     /**

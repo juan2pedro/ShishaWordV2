@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Modelo;
+use App\Models\Marca;
 use Illuminate\Http\Request;
 
 /**
@@ -19,8 +20,8 @@ class ModeloController extends Controller
     public function index()
     {
         $modelos = Modelo::paginate();
-
-        return view('modelo.index', compact('modelos'))
+        $marcas = Marca::pluck('nombre','id');
+        return view('modelo.index', compact('modelos','marcas'))
             ->with('i', (request()->input('page', 1) - 1) * $modelos->perPage());
     }
 
@@ -32,7 +33,8 @@ class ModeloController extends Controller
     public function create()
     {
         $modelo = new Modelo();
-        return view('modelo.create', compact('modelo'));
+        $marcas = Marca::pluck('nombre','id');
+        return view('modelo.create', compact('modelo','marcas'));
     }
 
     /**
@@ -43,10 +45,20 @@ class ModeloController extends Controller
      */
     public function store(Request $request)
     {
+        $modelo= new Modelo();
         request()->validate(Modelo::$rules);
-
+        if($request->file('imagenes')){
+            $file= $request->file('imagenes');
+            $destinationPath = "public/media/";
+            $filename= time()."-".$file->getClientOriginalName();
+            $uploadSucesses = $request->file('imagenes')->move($destinationPath, $filename);
+        }
         $modelo = Modelo::create($request->all());
+        $modelo['imagenes']= $filename;
+        $modelo->save();
 
+
+        
         return redirect()->route('modelos.index')
             ->with('success', 'Modelo created successfully.');
     }
@@ -73,8 +85,8 @@ class ModeloController extends Controller
     public function edit($id)
     {
         $modelo = Modelo::find($id);
-
-        return view('modelo.edit', compact('modelo'));
+        $marcas = Marca::pluck('nombre','id');
+        return view('modelo.edit', compact('modelo','marcas'));
     }
 
     /**
@@ -86,9 +98,18 @@ class ModeloController extends Controller
      */
     public function update(Request $request, Modelo $modelo)
     {
-        request()->validate(Modelo::$rules);
+        //request()->validate(Modelo::$rules);
+        if($request->file('imagenes')){
+            $file= $request->file('imagenes');
+            $destinationPath = "public/media/";
+            $filename= time()."-".$file->getClientOriginalName();
+            $uploadSucesses = $request->file('imagenes')->move($destinationPath, $filename);
+        } 
+         $modelo->update($request->all());
+        $modelo['imagenes']= $filename;
+        $modelo->save();
 
-        $modelo->update($request->all());
+      
 
         return redirect()->route('modelos.index')
             ->with('success', 'Modelo updated successfully');

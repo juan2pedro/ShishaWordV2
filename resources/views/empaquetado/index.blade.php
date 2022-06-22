@@ -36,8 +36,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Formato Id</th>
-										<th>Sabore Id</th>
+										<th>Formatos</th>
+										<th>Sabores</th>
 
                                         <th></th>
                                     </tr>
@@ -47,16 +47,19 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $empaquetado->formato_id }}</td>
-											<td>{{ $empaquetado->sabore_id }}</td>
+											<td>{{ $empaquetado->formato->nombre}}</td>
+											<td>{{ $empaquetado->sabore->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('empaquetados.destroy',$empaquetado->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('empaquetados.show',$empaquetado->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    @if(Auth::user()->isAdmin==1)
                                                     <a class="btn btn-sm btn-success" href="{{ route('empaquetados.edit',$empaquetado->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+@endif
+                                                   
                                                 </form>
                                             </td>
                                         </tr>

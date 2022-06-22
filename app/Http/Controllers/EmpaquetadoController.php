@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empaquetado;
+use App\Models\Formato;
+use App\Models\Sabore;
 use Illuminate\Http\Request;
 
 /**
@@ -19,8 +21,10 @@ class EmpaquetadoController extends Controller
     public function index()
     {
         $empaquetados = Empaquetado::paginate();
+        $formatos = Formato::pluck('nombre','id');
+        $sabores = Sabore::pluck('nombre','id');
 
-        return view('empaquetado.index', compact('empaquetados'))
+        return view('empaquetado.index', compact('empaquetados','formatos','sabores'))
             ->with('i', (request()->input('page', 1) - 1) * $empaquetados->perPage());
     }
 
@@ -32,7 +36,9 @@ class EmpaquetadoController extends Controller
     public function create()
     {
         $empaquetado = new Empaquetado();
-        return view('empaquetado.create', compact('empaquetado'));
+        $formatos = Formato::pluck('nombre','id');
+        $sabores = Sabore::pluck('nombre','id');
+        return view('empaquetado.create', compact('empaquetado','formatos','sabores'));
     }
 
     /**
@@ -60,8 +66,9 @@ class EmpaquetadoController extends Controller
     public function show($id)
     {
         $empaquetado = Empaquetado::find($id);
-
-        return view('empaquetado.show', compact('empaquetado'));
+        $formatos = Formato::pluck('nombre','id');
+        $sabores = Sabore::pluck('nombre','id');
+        return view('empaquetado.show', compact('empaquetado','formatos','sabores'));
     }
 
     /**
@@ -73,8 +80,9 @@ class EmpaquetadoController extends Controller
     public function edit($id)
     {
         $empaquetado = Empaquetado::find($id);
-
-        return view('empaquetado.edit', compact('empaquetado'));
+        $formatos = Formato::pluck('nombre','id');
+        $sabores = Sabore::pluck('nombre','id');
+        return view('empaquetado.edit', compact('empaquetado','formatos','sabores'));
     }
 
     /**

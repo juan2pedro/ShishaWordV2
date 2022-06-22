@@ -34,9 +34,9 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>ID</th>
                                         
-										<th>Marca Id</th>
+										<th>Marca</th>
 										<th>Nombre</th>
 										<th>Detalles</th>
 
@@ -48,17 +48,21 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $sabore->marca_id }}</td>
+											<td>{{ $sabore->marca->nombre }}</td>
 											<td>{{ $sabore->nombre }}</td>
 											<td>{{ $sabore->detalles }}</td>
 
                                             <td>
                                                 <form action="{{ route('sabores.destroy',$sabore->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('sabores.show',$sabore->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    @if (Session::get('isAdmin') ==1)
+
                                                     <a class="btn btn-sm btn-success" href="{{ route('sabores.edit',$sabore->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                @endif
+                                                    
                                                 </form>
                                             </td>
                                         </tr>

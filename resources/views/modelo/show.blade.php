@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
+@csrf
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -21,8 +20,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Marca Id:</strong>
-                            {{ $modelo->marca_id }}
+                            <strong>Marca:</strong>
+                            {{ $modelo->marca->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha:</strong>
@@ -46,16 +45,15 @@
                         </div>
                         <div class="form-group">
                             <strong>Imagenes:</strong>
-                            {{ $modelo->imagenes }}
+                            <img class="rounded-top" src="..\public\media\{{ $modelo->imagenes }}" />
                         </div>
                         <div class="form-group">
                             <strong>Precio:</strong>
-                            {{ $modelo->precio }}
+                            {{ $modelo->precio }} €
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 @endsection
+

@@ -14,22 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::resource('contienes',App\Http\Controllers\ContieneController::class);
-Route::resource('creas',App\Http\Controllers\CreaController::class);
-Route::resource('disponibles',App\Http\Controllers\DisponibleController::class);
-Route::resource('empaquetados',App\Http\Controllers\EmpaquetadoController::class);
-Route::resource('formatos',App\Http\Controllers\FormatoController::class);
-Route::resource('marcas',App\Http\Controllers\MarcaController::class);
-Route::resource('materiales',App\Http\Controllers\MaterialeController::class);
-Route::resource('materiales',App\Http\Controllers\MaterialeController::class);
-Route::resource('mezclas',App\Http\Controllers\MezclaController::class);
-Route::resource('modelos',App\Http\Controllers\ModeloController::class);
-Route::resource('sabores',App\Http\Controllers\SaboreController::class);
+Route::resource('contienes',App\Http\Controllers\ContieneController::class)->middleware('auth');
+Route::resource('creas',App\Http\Controllers\CreaController::class)->middleware('auth');
+Route::resource('disponibles',App\Http\Controllers\DisponibleController::class)->middleware('auth');
+Route::resource('empaquetados',App\Http\Controllers\EmpaquetadoController::class)->middleware('auth');
+Route::resource('formatos',App\Http\Controllers\FormatoController::class)->middleware('auth');
+Route::resource('marcas',App\Http\Controllers\MarcaController::class)->middleware('auth');
+Route::resource('materiales',App\Http\Controllers\MaterialeController::class)->middleware('auth');
+Route::resource('mezclas',App\Http\Controllers\MezclaController::class)->middleware('auth');
+Route::resource('modelos',App\Http\Controllers\ModeloController::class)->middleware('auth');
+Route::resource('sabores',App\Http\Controllers\SaboreController::class)->middleware('auth');
+Route::resource('main',App\Http\Controllers\MainController::class)->middleware('auth');
+
+Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('modelo.add');
+Route::post('/store-image',[ImageUploadController::class,'storeImage'])->name('modelo.store');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\ModeloController::class, 'index'])->name('home');

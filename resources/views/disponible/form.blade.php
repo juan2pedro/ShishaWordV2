@@ -3,12 +3,12 @@
         
         <div class="form-group">
             {{ Form::label('materiale_id') }}
-            {{ Form::text('materiale_id', $disponible->materiale_id, ['class' => 'form-control' . ($errors->has('materiale_id') ? ' is-invalid' : ''), 'placeholder' => 'Materiale Id']) }}
+            {{ Form::select('materiale_id',$materiales, $disponible->materiale_id, ['class' => 'form-control' . ($errors->has('materiale_id') ? ' is-invalid' : ''), 'placeholder' => 'Materiale Id']) }}
             {!! $errors->first('materiale_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('modelo_id') }}
-            {{ Form::text('modelo_id', $disponible->modelo_id, ['class' => 'form-control' . ($errors->has('modelo_id') ? ' is-invalid' : ''), 'placeholder' => 'Modelo Id']) }}
+            {{ Form::select('modelo_id',$modelos, $disponible->modelo_id, ['class' => 'form-control' . ($errors->has('modelo_id') ? ' is-invalid' : ''), 'placeholder' => 'Modelo Id']) }}
             {!! $errors->first('modelo_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

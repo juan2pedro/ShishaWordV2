@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contiene;
+use App\Models\Mezcla;
+use App\Models\Sabore;
 use Illuminate\Http\Request;
 
 /**
@@ -19,8 +21,9 @@ class ContieneController extends Controller
     public function index()
     {
         $contienes = Contiene::paginate();
-
-        return view('contiene.index', compact('contienes'))
+        $mezclas = Mezcla::pluck('detalles','id');
+        $sabores = Sabore::pluck('nombre','id');
+        return view('contiene.index', compact('contienes','mezclas','sabores'))
             ->with('i', (request()->input('page', 1) - 1) * $contienes->perPage());
     }
 

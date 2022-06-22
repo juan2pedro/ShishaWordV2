@@ -22,7 +22,7 @@ class Modelos extends Migration
             $table->String('nombre');
             $table->String('color');
             $table->String('detalles');
-            $table->boolean('base')->default(0);
+            $table->boolean('base')->nullable;
             $table->string('imagenes');
             $table->Integer('precio');
             $table->timestamps();

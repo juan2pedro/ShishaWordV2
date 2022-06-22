@@ -21,12 +21,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Formato Id:</strong>
-                            {{ $empaquetado->formato_id }}
+                            <strong>Formatos</strong>
+                            {{ $empaquetado->formato->nombre}}
                         </div>
                         <div class="form-group">
-                            <strong>Sabore Id:</strong>
-                            {{ $empaquetado->sabore_id }}
+                            <strong>Sabores:</strong>
+                            {{ $empaquetado->sabore->nombre }}
                         </div>
 
                     </div>

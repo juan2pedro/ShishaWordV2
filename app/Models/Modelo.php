@@ -33,7 +33,7 @@ class Modelo extends Model
 		'nombre' => 'required',
 		'color' => 'required',
 		'detalles' => 'required',
-		'base' => 'required',
+		'base' => 'basic',
 		'imagenes' => 'required',
 		'precio' => 'required',
     ];
@@ -66,3 +66,4 @@ class Modelo extends Model
     
 
 }
+

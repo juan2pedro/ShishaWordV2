@@ -53,10 +53,16 @@
                                             <td>
                                                 <form action="{{ route('creas.destroy',$crea->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('creas.show',$crea->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+
+                                                    @if(Auth::user()->isAdmin==1)
                                                     <a class="btn btn-sm btn-success" href="{{ route('creas.edit',$crea->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+@endif
+
+
+                                                    
                                                 </form>
                                             </td>
                                         </tr>

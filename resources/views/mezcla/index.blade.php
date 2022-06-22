@@ -51,10 +51,14 @@
                                             <td>
                                                 <form action="{{ route('mezclas.destroy',$mezcla->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('mezclas.show',$mezcla->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    @if (Session::get('isAdmin') ==1)
+
                                                     <a class="btn btn-sm btn-success" href="{{ route('mezclas.edit',$mezcla->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                @endif
+                                                    
                                                 </form>
                                             </td>
                                         </tr>

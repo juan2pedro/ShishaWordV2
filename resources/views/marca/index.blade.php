@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('template_title')
     Marca
 @endsection
@@ -57,10 +56,14 @@
                                             <td>
                                                 <form action="{{ route('marcas.destroy',$marca->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('marcas.show',$marca->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+
+                                                @if (Session::get('isAdmin') ==1)
+
                                                     <a class="btn btn-sm btn-success" href="{{ route('marcas.edit',$marca->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                @endif
                                                 </form>
                                             </td>
                                         </tr>

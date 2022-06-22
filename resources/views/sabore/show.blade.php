@@ -21,8 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Marca Id:</strong>
-                            {{ $sabore->marca_id }}
+                            <strong>Marca:</strong>
+                            {{ $sabore->marca->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre:</strong>
