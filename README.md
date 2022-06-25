@@ -26,6 +26,8 @@ Desde esta pagina podemos actualizar la informacion basica del modelo como nombr
 - ## VENTA DE ALERTA
 CUANDO NO SE HAN ENCONTRADOS MODELOS EN LA BASE DE DATOS QUE MOSTRAR.
 ![image](https://user-images.githubusercontent.com/55956200/145902407-44cfbb91-637d-4093-9ea3-3eab5d82c7e8.png)
+- ## VIDEO DEL HOME (no disponible en el hosting)
+![image](https://user-images.githubusercontent.com/55956200/175780021-6125c427-8a53-4654-a950-79014274ce00.png)
 
 # Esquema E/R 
 ![image](https://user-images.githubusercontent.com/55956200/162184427-cb48311c-234f-4c3b-a671-84a22e9e6cae.png)
