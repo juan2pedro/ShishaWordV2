@@ -44,7 +44,7 @@ CUANDO NO SE HAN ENCONTRADOS MODELOS EN LA BASE DE DATOS QUE MOSTRAR.
 UPDATE : En este servidor está desplegada la versión anterior sin Laravel.
 La versión con laravel será desplegada en otro hosting ya que aquí solo soporta hasta la versión 5 y sería de pago,
 
-Actualmente está desplegado en: ("https://shishaword.online/ShishaWordV2/") usando un dominino gratuito.
+Actualmente está desplegado en: ("http://shishaword.atwebpages.com/paginas/home.php#") usando un dominino gratuito.
 
 
 
